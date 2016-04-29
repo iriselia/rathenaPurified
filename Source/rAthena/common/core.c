@@ -326,8 +326,10 @@ int main (int argc, char **argv)
 			SERVER_NAME = ++p1;
 			n = p1-argv[0]; //calc dir name len
 			pwd = safestrncpy((char*)malloc(n + 1), argv[0], n);
-			if(chdir(pwd) != 0)
-				ShowError("Couldn't change working directory to %s for %s, runtime will probably fail",pwd,SERVER_NAME);
+			
+			// Don't change cwd
+			//if(chdir(pwd) != 0)
+			//	ShowError("Couldn't change working directory to %s for %s, runtime will probably fail",pwd,SERVER_NAME);
 			free(pwd);
 		}else{
 			// On Windows the .bat files have the executeable names as parameters without any path seperator [Lemongrass]
@@ -340,6 +342,7 @@ int main (int argc, char **argv)
 #ifdef MINICORE // minimalist Core
 	display_title();
 	usercheck();
+	db_init();
 	do_init(argc,argv);
 	do_final();
 #else// not MINICORE

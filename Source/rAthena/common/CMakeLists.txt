@@ -2,7 +2,6 @@ cmake_minimum_required( VERSION 2.8 )
 
 # Preprocessor Definitions
 SET( MACROS
-MINICORE
 )
 SET( INCLUDE
 libconfig
