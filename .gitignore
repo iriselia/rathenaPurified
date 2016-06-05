@@ -6,6 +6,9 @@ build/
 Binaries/Libraries/*
 Binaries/Shaders/*
 Binaries/Backup/*
+Binaries/libmysql.dll
+Binaries/zlib1.dll
+
 Purify/
 CMake/
 PortableCMake-Win32/
